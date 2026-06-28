@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+.venv/
+
+# PyInstaller artifacts
+dist/
+build/TCGPriceManager/
+
+# Runtime data — no se versiona, cada usuario sync desde la API
+tcg_app/data/tcg.db
+tcg_app/data/tcg.db-shm
+tcg_app/data/tcg.db-wal
+output_pokemon_tcg/
+downloads/
+
+# Dev tooling
+.pytest_cache/
+.claude/
