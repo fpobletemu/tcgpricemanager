@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
-  "download_url": "https://github.com/fpobletemu/tcgpricemanager/releases/download/v1.0.0/TCGPriceManager.exe",
-  "release_notes": "Primera versión pública."
+  "version": "1.0.1",
+  "download_url": "https://github.com/fpobletemu/tcgpricemanager/releases/download/v1.0.1/TCGPriceManager.exe",
+  "release_notes": "Fix: error FOREIGN KEY al sincronizar con la API desde una base de datos vacía."
 }
