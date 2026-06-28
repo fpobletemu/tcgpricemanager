@@ -74,11 +74,17 @@ def sync_from_api(
         and c["categoryId"] not in tcgcsv.SKIP_CATS
     ]
 
+    # Populate categories and groups before inserting products (FK order).
+    for cat in pokemon_cats:
+        db.upsert_category(conn, cat)
+
     all_tasks: list[tuple[int, dict]] = []
     for cat in pokemon_cats:
         groups = tcgcsv.get_groups(cat["categoryId"])
         for g in groups:
+            db.upsert_group(conn, g)
             all_tasks.append((cat["categoryId"], g))
+    conn.commit()
 
     total       = len(all_tasks)
     groups_done = 0
