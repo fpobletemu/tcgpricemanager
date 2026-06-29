@@ -435,14 +435,11 @@ class BatchTab(QWidget):
         status_lbl.setStyleSheet(self._status_style(item.status))
         self._table.setCellWidget(idx, COL_STATO, status_lbl)
 
-        if item.status in ("review", "not_found"):
-            btn = QPushButton("Cambiar")
-            btn.setFixedSize(74, 28)
-            btn.setStyleSheet("font-size: 9pt; min-width: 0;")
-            btn.clicked.connect(self._make_change_handler(idx))
-            self._table.setCellWidget(idx, COL_BTN, btn)
-        else:
-            self._table.removeCellWidget(idx, COL_BTN)
+        btn = QPushButton("Cambiar")
+        btn.setFixedSize(74, 28)
+        btn.setStyleSheet("font-size: 9pt; min-width: 0;")
+        btn.clicked.connect(self._make_change_handler(idx))
+        self._table.setCellWidget(idx, COL_BTN, btn)
 
         # Delete button — always present
         del_btn = QPushButton("✕")
